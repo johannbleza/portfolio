@@ -69,12 +69,14 @@ const Hero = () => {
       },
     });
     gsap.to("#profile", {
-      y: -400,
-      scale: 2,
-      position: "absolute",
+      scale: 5,
+      y: 600,
       ease: "power1.inOut",
+      // overflow: "hidden",
       scrollTrigger: {
-        scrub: true,
+        // pin: true,
+        end: 800,
+        scrub: 1,
       },
     });
   }, []);
@@ -116,9 +118,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="relative flex gap-2 justify-between text-end items-end lg:justify-center">
-          <div className="w-[50vw]  lg:absolute lg:w-[40vh] lg:-top-20 2xl:-top-30">
+          <div
+            className="w-[50vw]  lg:absolute lg:w-[40vh] lg:-top-20 2xl:-top-30"
+            id="profile"
+          >
             <Image
-              id="profile"
               priority={true}
               src="/profile3.gif"
               // fill={true}
