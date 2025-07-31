@@ -68,17 +68,28 @@ const Hero = () => {
         scrub: true,
       },
     });
-    gsap.to("#profile", {
-      scale: 5,
-      y: 600,
-      ease: "power1.inOut",
-      // overflow: "hidden",
-      scrollTrigger: {
-        // pin: true,
-        end: 800,
-        scrub: 1,
+
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isDesktop: "(min-width: 800px)",
+        isMobile: "(max-width: 799px)",
       },
-    });
+      (context) => {
+        const isDesktop = context.conditions?.isDesktop;
+
+        gsap.to("#profile", {
+          scale: 4.5,
+          y: isDesktop ? 800 : 400,
+          scrollTrigger: {
+            // pin: true,
+            end: 800,
+            scrub: 1,
+          },
+        });
+      },
+    );
   }, []);
   return (
     <main className="relative min-h-dvh flex flex-col justify-between p-4">
