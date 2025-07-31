@@ -3,49 +3,86 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import {
-  ArrowDownLeft,
-  ArrowDownRight,
-  Bug,
-  TerminalIcon,
-  TerminalSquare,
-} from "lucide-react";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  const firstText = useRef<HTMLParagraphElement>(null);
+  const secondText = useRef<HTMLParagraphElement>(null);
+  const slider = useRef<HTMLDivElement>(null);
+  let xPercent = 0;
+  let direction = -1;
+  const animate = () => {
+    if (xPercent < -100) {
+      xPercent = 0;
+    } else if (xPercent > 0) {
+      xPercent = -100;
+    }
+    gsap.set(firstText.current, { xPercent: xPercent });
+    gsap.set(secondText.current, { xPercent: xPercent });
+    requestAnimationFrame(animate);
+
+    xPercent += 0.1 * direction;
+  };
+
   useGSAP(() => {
-    // gsap.to("#name", {
-    //   y: -200,
-    //   scrollTrigger: {
-    //     scrub: true,
-    //   },
-    // });
-    // gsap.to("#nav", {
-    //   y: -400,
-    //   scrollTrigger: {
-    //     markers: true,
-    //     scrub: true,
-    //   },
-    // });
-    // gsap.to("#title", { y: -100, scrollTrigger: {
-    //     scrub: true,
-    //   },
-    // });
-    // gsap.to("#profile", {
-    //   y: -400,
-    //   scrollTrigger: {
-    //     scrub: true,
-    //   },
-    // });
+    if (secondText.current) {
+      gsap.set(secondText.current, {
+        left: secondText.current.getBoundingClientRect().width,
+      });
+    }
+    gsap.to(slider.current, {
+      scrollTrigger: {
+        trigger: document.documentElement,
+        scrub: 0.5,
+        start: 0,
+        end: window.innerHeight,
+        onUpdate: (e) => (direction = e.direction * -1),
+      },
+    });
+
+    requestAnimationFrame(animate);
+
+    gsap.to("#name", {
+      y: -300,
+      scrollTrigger: {
+        scrub: true,
+      },
+    });
+    gsap.to("#nav", {
+      y: -400,
+      scrollTrigger: {
+        scrub: true,
+      },
+    });
+    gsap.to("#title", {
+      y: -200,
+      scrollTrigger: {
+        scrub: true,
+      },
+    });
+    gsap.to("#info", {
+      y: -50,
+      scrollTrigger: {
+        scrub: true,
+      },
+    });
+    gsap.to("#profile", {
+      y: -400,
+      scale: 2,
+      position: "absolute",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        scrub: true,
+      },
+    });
   }, []);
   return (
     <main className="relative min-h-dvh flex flex-col justify-between p-4">
-      <nav className=" flex justify-between items-start text-xl " id="nav">
-        <div className="flex gap-2 items-center font-bold">
+      <nav className=" flex justify-between items-start text-xl" id="nav">
+        <div className="flex gap-2 items-center font-bold tracking-tighter">
           bleza.dev
-          {/* <Bug /> */}
-          {/* <TerminalSquare /> */}
           <Image
             src="/spider.svg"
             width={20}
@@ -62,18 +99,21 @@ const Hero = () => {
         </div>
       </nav>
       <div className="lg:absolute top-[16vh] lg:text-center">
-        <div className="leading-[10vw] mb-4 flex flex-col">
-          <h1 className="text-[11vw] md:text-[13vw] font-bold" id="name">
+        <div className="leading-[10vw] mb-2 flex flex-col">
+          <h1
+            className="text-[13vw] md:text-[14vw] font-bold tracking-tighter"
+            id="name"
+          >
             JOHANN BLEZA
           </h1>
-          <marquee className="text-[9vw] text-stone-50 font-semibold">
-            SOFTWARE ENGINEER SOFTWARE ENGINEER SOFTWARE ENGINEER SOFTWARE
-            ENGINEER SOFTWARE ENGINEER SOFTWARE ENGINEER SOFTWARE ENGINEER
-            SOFTWARE ENGINEER SOFTWARE ENGINEER SOFTWARE ENGINEER SOFTWARE
-            ENGINEER SOFTWARE ENGINEER SOFTWARE ENGINEER SOFTWARE ENGINEER
-            SOFTWARE ENGINEER SOFTWARE ENGINEER
-          </marquee>
-          {/* <ArrowDownRight className="size-20" strokeWidth={0.5} /> */}
+          <div
+            className="text-[10vw] text-stone-50 font-semibold relative flex whitespace-nowrap w-[calc(100dvw-16px*2)] overflow-hidden"
+            ref={slider}
+            id="title"
+          >
+            <p ref={firstText}>SOFTWARE ENGINEER -&nbsp;</p>
+            <p ref={secondText}>SOFTWARE ENGINEER -&nbsp;</p>
+          </div>
         </div>
         <div className="relative flex gap-2 justify-between text-end items-end lg:justify-center">
           <div className="w-[50vw]  lg:absolute lg:w-[40vh] lg:-top-20 2xl:-top-30">
@@ -88,7 +128,10 @@ const Hero = () => {
               className="object-cover"
             />
           </div>
-          <div className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl">
+          <div
+            className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl"
+            id="info"
+          >
             <p>UI/UX Design</p>
             <p>Front-End Developer</p>
             <p>Web Development</p>
