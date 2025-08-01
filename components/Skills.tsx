@@ -7,32 +7,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
   useGSAP(() => {
-    gsap.fromTo(
-      "#skills",
-      {
-        y: 400,
+    gsap.to("#skills", {
+      y: -250,
+      duration: 1,
+      scrollTrigger: {
+        scrub: true,
       },
-      {
-        y: -200,
-        duration: 1,
-        scrollTrigger: {
-          scrub: true,
-        },
+    });
+    gsap.to("#tech", {
+      y: -100,
+      duration: 1,
+      scrollTrigger: {
+        scrub: true,
       },
-    );
-    gsap.fromTo(
-      "#tech",
-      {
-        y: 500,
-      },
-      {
-        y: -200,
-        duration: 1,
-        scrollTrigger: {
-          scrub: true,
-        },
-      },
-    );
+    });
   }, []);
   return (
     <main className="min-h-dvh p-4  flex flex-col gap-20 mt-20 text-white">

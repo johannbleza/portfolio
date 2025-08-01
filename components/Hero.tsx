@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Hero = () => {
   const firstText = useRef<HTMLParagraphElement>(null);
@@ -44,20 +44,35 @@ const Hero = () => {
 
     requestAnimationFrame(animate);
 
-    gsap.to("#name", {
-      y: -300,
+    const split = SplitText.create("#name", { mask: "lines" });
+
+    gsap.to(split.lines, {
+      y: 200,
       scrollTrigger: {
-        scrub: true,
+        scrub: 1,
+        end: 400,
       },
     });
+
+    gsap.to(".hero", {
+      opacity: 0,
+      scrollTrigger: {
+        scrub: 1,
+        end: 200,
+      },
+    });
+
+    gsap.from("#profile", {
+      // y: "100vh",
+      height: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "power1.out",
+      // filter: "brightness(0%)",
+    });
+
     gsap.to("#nav", {
       y: -400,
-      scrollTrigger: {
-        scrub: true,
-      },
-    });
-    gsap.to("#title", {
-      y: -200,
       scrollTrigger: {
         scrub: true,
       },
@@ -79,21 +94,35 @@ const Hero = () => {
       (context) => {
         const isDesktop = context.conditions?.isDesktop;
 
-        gsap.to("#profile", {
-          scale: 4.5,
-          y: isDesktop ? 800 : 400,
-          scrollTrigger: {
-            // pin: true,
-            end: 800,
-            scrub: 1,
+        gsap.fromTo(
+          "#profile",
+          { filter: "brightness(100%)" },
+          {
+            filter: "brightness(50%)",
+            scale: 4.5,
+            y: isDesktop ? "110vh" : 600,
+            scrollTrigger: {
+              // pin: true,
+              end: 400,
+              scrub: 1,
+            },
           },
+        );
+        gsap.from(split.chars, {
+          y: isDesktop ? 150 : 100,
+          stagger: {
+            from: "start",
+            amount: 0.5,
+            // each: isDesktop ? 0.04 : 0.01,
+          },
+          ease: "power1",
         });
       },
     );
   }, []);
   return (
     <main className="relative min-h-dvh flex flex-col justify-between p-4">
-      <nav className=" flex justify-between items-start text-xl" id="nav">
+      <nav className=" flex justify-between items-start text-xl hero" id="nav">
         <div className="flex gap-2 items-center font-bold tracking-tighter">
           bleza.dev
           <Image
@@ -112,7 +141,7 @@ const Hero = () => {
         </div>
       </nav>
       <div className="lg:absolute top-[16vh] lg:text-center">
-        <div className="leading-[10vw] mb-2 flex flex-col">
+        <div className="leading-[11vw]  flex flex-col hero">
           <h1
             className="text-[13vw] md:text-[14vw] font-bold tracking-tighter"
             id="name"
@@ -130,21 +159,19 @@ const Hero = () => {
         </div>
         <div className="relative flex gap-2 justify-between text-end items-end lg:justify-center">
           <div
-            className="w-[50vw]  lg:absolute lg:w-[40vh] lg:-top-20 2xl:-top-30"
+            className="w-[55vw] h-[35vh]  lg:absolute lg:w-[25vw]  sm:h-[50vh] lg:-top-20 2xl:-top-30 "
             id="profile"
           >
             <Image
               priority={true}
               src="/profile3.gif"
-              // fill={true}
-              height={800}
-              width={800}
+              fill={true}
               alt="profile"
               className="object-cover"
             />
           </div>
           <div
-            className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl"
+            className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl hero"
             id="info"
           >
             <p>UI/UX Design</p>
