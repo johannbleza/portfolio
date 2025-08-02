@@ -42,18 +42,19 @@ const Skills = () => {
           y: isDesktop ? 200 : 100,
           stagger: 0.1,
           scrollTrigger: {
-            start: 800,
-            end: isDesktop ? 1200 : 1000,
-            scrub: 4,
+            start: 700,
+            end: isDesktop ? 1200 : 900,
+            markers: true,
+            scrub: isDesktop ? 4 : 3,
           },
         });
         gsap.from(tech2.lines, {
           y: isDesktop ? 200 : 100,
           stagger: 0.1,
           scrollTrigger: {
-            start: 800,
-            end: isDesktop ? 1200 : 1000,
-            scrub: 4,
+            start: 700,
+            end: isDesktop ? 1200 : 900,
+            scrub: isDesktop ? 4 : 3,
           },
         });
       },
