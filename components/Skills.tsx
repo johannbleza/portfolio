@@ -44,7 +44,6 @@ const Skills = () => {
           scrollTrigger: {
             start: 700,
             end: isDesktop ? 1200 : 900,
-            markers: true,
             scrub: isDesktop ? 4 : 3,
           },
         });

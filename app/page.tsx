@@ -2,7 +2,7 @@ import About from "@/components/About";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="relative bg-stone-200 text-stone-700 tracking-tighter">
       <div className="overflow-hidden">
@@ -15,4 +15,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

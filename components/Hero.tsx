@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { ScrollToPlugin, ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 
 const Hero = () => {
   const firstText = useRef<HTMLParagraphElement>(null);
@@ -27,6 +27,7 @@ const Hero = () => {
   };
 
   useGSAP(() => {
+    gsap.to(window, { scrollTo: 0 });
     if (secondText.current) {
       gsap.set(secondText.current, {
         left: secondText.current.getBoundingClientRect().width,
@@ -128,9 +129,17 @@ const Hero = () => {
         </div>
         <div className="md:flex justify-between gap-20">
           <p className="sub">Home</p>
-          <a href="#skills" className="sub">
+          <p
+            onClick={() =>
+              gsap.to(window, {
+                duration: 0.5,
+                scrollTo: "#skills",
+              })
+            }
+            className="sub cursor-pointer"
+          >
             Services
-          </a>
+          </p>
           <p className="sub">About</p>
           <p className="sub">Contact</p>
         </div>
