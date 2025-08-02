@@ -27,7 +27,7 @@ const Hero = () => {
   };
 
   useGSAP(() => {
-    gsap.to(window, { scrollTo: 0 });
+    gsap.to(window, { scrollTo: 0, duration: 0.1 });
     if (secondText.current) {
       gsap.set(secondText.current, {
         left: secondText.current.getBoundingClientRect().width,
@@ -61,7 +61,8 @@ const Hero = () => {
 
     gsap.from(sub.lines, {
       y: 100,
-      stagger: 0.1,
+      stagger: 0.05,
+      delay: 1,
     });
 
     gsap.to(".hero", {
@@ -75,7 +76,7 @@ const Hero = () => {
     gsap.from("#profile", {
       height: 0,
       duration: 1,
-      delay: 0.5,
+      delay: 0.75,
       ease: "power1.out",
     });
 
@@ -105,6 +106,7 @@ const Hero = () => {
         );
         gsap.from(split.chars, {
           y: isDesktop ? 200 : 100,
+          delay: 0.75,
           stagger: {
             from: "start",
             amount: 0.5,
