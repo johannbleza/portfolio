@@ -44,7 +44,11 @@ const Hero = () => {
 
     requestAnimationFrame(animate);
 
-    const split = SplitText.create("#name", { mask: "lines" });
+    const split = SplitText.create("#name", {
+      type: "chars,lines",
+      mask: "lines",
+    });
+    const sub = SplitText.create(".sub", { type: "lines", mask: "lines" });
 
     gsap.to(split.lines, {
       y: 200,
@@ -52,6 +56,11 @@ const Hero = () => {
         scrub: 1,
         end: 400,
       },
+    });
+
+    gsap.from(sub.lines, {
+      y: 100,
+      stagger: 0.1,
     });
 
     gsap.to(".hero", {
@@ -63,25 +72,10 @@ const Hero = () => {
     });
 
     gsap.from("#profile", {
-      // y: "100vh",
       height: 0,
       duration: 1,
       delay: 0.5,
       ease: "power1.out",
-      // filter: "brightness(0%)",
-    });
-
-    gsap.to("#nav", {
-      y: -400,
-      scrollTrigger: {
-        scrub: true,
-      },
-    });
-    gsap.to("#info", {
-      y: -50,
-      scrollTrigger: {
-        scrub: true,
-      },
     });
 
     const mm = gsap.matchMedia();
@@ -100,20 +94,19 @@ const Hero = () => {
           {
             filter: "brightness(50%)",
             scale: 4.5,
-            y: isDesktop ? "110vh" : 600,
+            y: "110dvh",
             scrollTrigger: {
               // pin: true,
               end: 400,
-              scrub: 1,
+              scrub: 2,
             },
           },
         );
         gsap.from(split.chars, {
-          y: isDesktop ? 150 : 100,
+          y: isDesktop ? 200 : 100,
           stagger: {
             from: "start",
             amount: 0.5,
-            // each: isDesktop ? 0.04 : 0.01,
           },
           ease: "power1",
         });
@@ -134,16 +127,18 @@ const Hero = () => {
           />
         </div>
         <div className="md:flex justify-between gap-20">
-          <p>Home</p>
-          <p>Works</p>
-          <p>About</p>
-          <p>Contact</p>
+          <p className="sub">Home</p>
+          <a href="#skills" className="sub">
+            Services
+          </a>
+          <p className="sub">About</p>
+          <p className="sub">Contact</p>
         </div>
       </nav>
       <div className="lg:absolute top-[16vh] lg:text-center">
         <div className="leading-[11vw]  flex flex-col hero">
           <h1
-            className="text-[13vw] md:text-[14vw] font-bold tracking-tighter"
+            className="text-[13vw] md:text-[14vw] font-bold tracking-tighter text-stone-800"
             id="name"
           >
             JOHANN BLEZA
@@ -159,11 +154,10 @@ const Hero = () => {
         </div>
         <div className="relative flex gap-2 justify-between text-end items-end lg:justify-center">
           <div
-            className="w-[55vw] h-[35vh]  lg:absolute lg:w-[25vw]  sm:h-[50vh] lg:-top-20 2xl:-top-30 "
+            className="relative w-[55vw] h-[40vh] lg:absolute lg:w-[25vw]  sm:h-[50vh] lg:-top-20 2xl:-top-30 "
             id="profile"
           >
             <Image
-              priority={true}
               src="/profile3.gif"
               fill={true}
               alt="profile"
@@ -171,7 +165,7 @@ const Hero = () => {
             />
           </div>
           <div
-            className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl hero"
+            className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl hero sub"
             id="info"
           >
             <p>UI/UX Design</p>
