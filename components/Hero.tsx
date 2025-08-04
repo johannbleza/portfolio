@@ -77,7 +77,6 @@ const Hero = () => {
       height: 0,
       duration: 1,
       delay: 0.5,
-      ease: "power2",
     });
 
     const mm = gsap.matchMedia();
@@ -112,7 +111,7 @@ const Hero = () => {
             from: "start",
           },
 
-          ease: "power3",
+          ease: "power2",
         });
       },
     );
