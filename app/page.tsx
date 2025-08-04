@@ -1,4 +1,4 @@
-import About from "@/components/About";
+import Projects from "@/components/Projects";
 import Hero from "@/components/Hero";
 import Loader from "@/components/Loader";
 import Skills from "@/components/Skills";
@@ -11,10 +11,7 @@ const Page = () => {
         <Hero />
         <Skills />
       </div>
-      <About />
-      <About />
-      <About />
-      <About />
+      <Projects />
       <div className="absolute inset-0 opacity-80 noisy w-full h-full z-50 pointer-events-none" />
     </div>
   );

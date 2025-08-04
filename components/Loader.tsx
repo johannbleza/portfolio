@@ -30,8 +30,8 @@ const Loader = () => {
             ease: "power3.in",
           })
           .to(".shape", {
-            duration: isDesktop ? 1 : 1.25,
-            ease: "power3.Out",
+            duration: isDesktop ? 1 : 1.5,
+            ease: "power2",
             attr: { d: "M0 2S175 1 500 1s500 1 500 1V0H0Z" },
           });
       },

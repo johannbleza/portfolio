@@ -20,15 +20,6 @@ const Skills = () => {
       mask: "lines",
     });
 
-    gsap.from(skills.lines, {
-      y: 100,
-      stagger: 0.05,
-      scrollTrigger: {
-        start: 400,
-        end: 800,
-        scrub: 2,
-      },
-    });
     const mm = gsap.matchMedia();
 
     mm.add(
@@ -38,6 +29,16 @@ const Skills = () => {
       },
       (context) => {
         const isDesktop = context.conditions?.isDesktop;
+
+        gsap.from(skills.lines, {
+          y: isDesktop ? 200 : 100,
+          stagger: 0.05,
+          scrollTrigger: {
+            start: 400,
+            end: 800,
+            scrub: 2,
+          },
+        });
         gsap.from(tech.lines, {
           y: isDesktop ? 200 : 100,
           stagger: 0.1,
@@ -67,7 +68,7 @@ const Skills = () => {
       <section className="flex flex-col gap-12  xl:w-[80%] mx-auto justify-between">
         <div className="">
           <h1 className="text-5xl sm:text-6xl lg:text-[5vw] font-semibold  tracking-tighter skills">
-            Services
+            Skills
           </h1>
           <p className="text-justify text-stone-200 md:text-xl skills">
             I am a full stack developer that specialized in the front-end and
@@ -104,12 +105,14 @@ const Skills = () => {
             <h1>NODE.JS</h1>
             <h1>NEXT.JS</h1>
             <h1>ANGULAR</h1>
+            <h1>REACT NATIVE</h1>
           </div>
           <div className="text-stone-300  text-end tech2">
-            <h1>REACT NATIVE</h1>
             <h1>FLUTTER</h1>
             <h1>SUPABASE</h1>
             <h1>FIREBASE</h1>
+            <h1>PYTHON</h1>
+            <h1>STREAMLIT</h1>
             <h1>JAVA</h1>
             <h1>SPRING BOOT</h1>
             <h1>DOCKER</h1>

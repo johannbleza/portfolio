@@ -62,7 +62,7 @@ const Hero = () => {
     gsap.from(sub.lines, {
       y: 100,
       stagger: 0.05,
-      delay: 1,
+      delay: 0.75,
     });
 
     gsap.to(".hero", {
@@ -76,8 +76,8 @@ const Hero = () => {
     gsap.from("#profile", {
       height: 0,
       duration: 1,
-      delay: 0.75,
-      ease: "power1.out",
+      delay: 0.5,
+      ease: "power2",
     });
 
     const mm = gsap.matchMedia();
@@ -96,7 +96,7 @@ const Hero = () => {
           {
             filter: "brightness(50%)",
             scale: 4.5,
-            y: "110dvh",
+            y: isDesktop ? "120dvh" : "80vh",
             scrollTrigger: {
               // pin: true,
               end: 400,
@@ -106,12 +106,13 @@ const Hero = () => {
         );
         gsap.from(split.chars, {
           y: isDesktop ? 200 : 100,
-          delay: 0.75,
+          delay: 0.5,
           stagger: {
-            from: "start",
             amount: 0.5,
+            from: "start",
           },
-          ease: "power1",
+
+          ease: "power3",
         });
       },
     );
@@ -140,7 +141,7 @@ const Hero = () => {
             }
             className="sub cursor-pointer"
           >
-            Services
+            Skills
           </p>
           <p className="sub">About</p>
           <p className="sub">Contact</p>
@@ -169,6 +170,7 @@ const Hero = () => {
             id="profile"
           >
             <Image
+              priority
               src="/profile3.gif"
               fill={true}
               alt="profile"
