@@ -13,7 +13,7 @@ const Page = () => {
         <Skills />
       </div>
       <Projects />
-      {/* <About /> */}
+      <About />
       <div className="absolute inset-0 opacity-80 noisy w-full h-full z-50 pointer-events-none" />
     </div>
   );

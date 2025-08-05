@@ -17,10 +17,10 @@ const Projects = () => {
       (context) => {
         const isDesktop = context.conditions?.isDesktop;
         gsap.to("#projects", {
-          y: -800,
-          ease: "none",
+          y: "-100dvh",
+          ease: "power1.inOut",
           scrollTrigger: {
-            scrub: 4,
+            scrub: 2,
             start: isDesktop ? 1800 : 1000,
           },
         });
@@ -28,33 +28,36 @@ const Projects = () => {
     );
   }, []);
   return (
-    <div className="-mt-12 bg-black h-[90vh]">
+    <div>
       <div
-        className="bg-black text-stone-200 py-20 p-4 flex flex-col gap-6 rounded-4xl"
+        className="bg-black text-stone-200 pt-20 pb-40 p-4 flex flex-col gap-6"
         id="projects"
       >
         <div className="lg:w-[80%] lg:mx-auto flex flex-col gap-6 ">
-          <h1 className="text-6xl md:text-8xl font-bold">Projects</h1>
-          <div className="grid grid-cols-4 grid-rows-9 gap-4 h-[90vh] lg:h-dvh ">
+          <div className="flex">
+            <h1 className="text-6xl md:text-8xl font-bold">Projects</h1>
+            <p className="text-2xl md:text-4xl font-semibold">(7)</p>
+          </div>
+          <div className="grid grid-cols-4 grid-rows-12 gap-4 h-dvh lg:h-[150dvh] ">
             <div className="col-span-2 row-span-5  bg-stone-900 relative">
               <Image
                 src="/project1.png"
                 alt="project1"
                 fill={true}
-                className="object-cover grayscale- hover:grayscale-0 "
+                className="object-cover"
               />
-              <p className="absolute font-bold top-0 left-1 text-xl">
-                Daily Grid
-              </p>
+              <div className="absolute  top-0 left-1">
+                <h1 className="font-bold md:text-xl">Daily Grid</h1>
+              </div>
             </div>
             <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
               <Image
                 src="/project2.png"
                 alt="project1"
                 fill={true}
-                className="object-cover grayscale- hover:grayscale-0"
+                className="object-cover"
               />
-              <p className="absolute font-bold top-0 left-1 text-xl">
+              <p className="absolute font-bold top-0 left-1 md:text-xl">
                 Sched Mo
               </p>
             </div>
@@ -63,9 +66,9 @@ const Projects = () => {
                 src="/project3.png"
                 alt="project1"
                 fill={true}
-                className="object-cover grayscale- hover:grayscale-0"
+                className="object-cover"
               />
-              <p className="absolute font-bold top-0 left-1 text-xl">
+              <p className="absolute font-bold top-0 left-1 md:text-xl">
                 Statsify
               </p>
             </div>
@@ -74,9 +77,9 @@ const Projects = () => {
                 src="/project4.png"
                 alt="project1"
                 fill={true}
-                className="object-cover grayscale- hover:grayscale-0"
+                className="object-cover "
               />
-              <p className="absolute font-bold top-0 left-1 text-xl">
+              <p className="absolute font-bold top-0 left-1 md:text-xl">
                 Let Me Cook
               </p>
             </div>
@@ -85,9 +88,33 @@ const Projects = () => {
                 src="/project5.png"
                 alt="project1"
                 fill={true}
-                className="object-cover grayscale- hover:grayscale-0"
+                className="object-cover "
               />
-              <p className="absolute font-bold top-0 left-1 text-xl">AI-NIMO</p>
+              <p className="absolute font-bold top-0 left-1 md:text-xl">
+                AI-NIMO
+              </p>
+            </div>
+            <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
+              <Image
+                src="/project6.png"
+                alt="project1"
+                fill={true}
+                className="object-cover "
+              />
+              <p className="absolute font-bold top-0 left-1 md:text-xl">
+                Loan Desk
+              </p>
+            </div>
+            <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
+              <Image
+                src="/project7.png"
+                alt="project1"
+                fill={true}
+                className="object-cover "
+              />
+              <p className="absolute font-bold top-0 left-1 md:text-xl">
+                Quiz Me
+              </p>
             </div>
           </div>
         </div>

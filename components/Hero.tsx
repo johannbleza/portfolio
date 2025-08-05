@@ -94,8 +94,8 @@ const Hero = () => {
           { filter: "brightness(100%)" },
           {
             filter: "brightness(50%)",
-            scale: 4.5,
-            y: isDesktop ? "120dvh" : "80vh",
+            scale: 5,
+            y: isDesktop ? "120dvh" : "100vh",
             scrollTrigger: {
               // pin: true,
               end: 400,
