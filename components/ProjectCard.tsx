@@ -13,7 +13,7 @@ const ProjectCard = ({ name, img, className }: ProjectCardProps) => {
         src={img}
         alt={img}
         fill={true}
-        className="object-cover"
+        className="object-cover object-center"
         sizes="(max-width: 1024px) 100vw, 50vw"
       />
       <p className="absolute font-bold inset-1 md:text-xl">{name}</p>

@@ -142,6 +142,31 @@ const Hero = () => {
           >
             About
           </p>
+          <p
+            onClick={() => {
+              const mm = gsap.matchMedia();
+
+              mm.add(
+                {
+                  isDesktop: "(min-width: 800px)",
+                  isMobile: "(max-width: 799px)",
+                },
+
+                (context) => {
+                  const isDesktop = context.conditions?.isDesktop;
+                  gsap.to(window, {
+                    duration: 0.5,
+                    scrollTo: {
+                      y: isDesktop ? "#nextjs" : "#html",
+                    },
+                  });
+                },
+              );
+            }}
+            className="sub cursor-pointer"
+          >
+            Projects
+          </p>
           <p className="sub">Contact</p>
         </div>
       </nav>
