@@ -1,8 +1,9 @@
 "use client";
+import { projects } from "@/lib/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Image from "next/image";
+import ProjectCard from "./ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 const Projects = () => {
@@ -38,84 +39,15 @@ const Projects = () => {
             <h1 className="text-6xl md:text-8xl font-bold">Projects</h1>
             <p className="text-2xl md:text-4xl font-semibold">(7)</p>
           </div>
-          <div className="grid grid-cols-4 grid-rows-12 gap-4 h-dvh lg:h-[150dvh] ">
-            <div className="col-span-2 row-span-5  bg-stone-900 relative">
-              <Image
-                src="/project1.png"
-                alt="project1"
-                fill={true}
-                className="object-cover"
+          <div className="grid grid-cols-4 grid-rows-12 gap-4 h-dvh lg:h-[150dvh]">
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.name}
+                name={project.name}
+                img={project.img}
+                className={project.className}
               />
-              <div className="absolute  top-0 left-1">
-                <h1 className="font-bold md:text-xl">Daily Grid</h1>
-              </div>
-            </div>
-            <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
-              <Image
-                src="/project2.png"
-                alt="project1"
-                fill={true}
-                className="object-cover"
-              />
-              <p className="absolute font-bold top-0 left-1 md:text-xl">
-                Sched Mo
-              </p>
-            </div>
-            <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
-              <Image
-                src="/project3.png"
-                alt="project1"
-                fill={true}
-                className="object-cover"
-              />
-              <p className="absolute font-bold top-0 left-1 md:text-xl">
-                Statsify
-              </p>
-            </div>
-            <div className="col-span-2 row-span-4  bg-stone-900 p-4 relative">
-              <Image
-                src="/project4.png"
-                alt="project1"
-                fill={true}
-                className="object-cover "
-              />
-              <p className="absolute font-bold top-0 left-1 md:text-xl">
-                Let Me Cook
-              </p>
-            </div>
-            <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
-              <Image
-                src="/project5.png"
-                alt="project1"
-                fill={true}
-                className="object-cover "
-              />
-              <p className="absolute font-bold top-0 left-1 md:text-xl">
-                AI-NIMO
-              </p>
-            </div>
-            <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
-              <Image
-                src="/project6.png"
-                alt="project1"
-                fill={true}
-                className="object-cover "
-              />
-              <p className="absolute font-bold top-0 left-1 md:text-xl">
-                Loan Desk
-              </p>
-            </div>
-            <div className="col-span-2 row-span-3  bg-stone-900 p-4 relative">
-              <Image
-                src="/project7.png"
-                alt="project1"
-                fill={true}
-                className="object-cover "
-              />
-              <p className="absolute font-bold top-0 left-1 md:text-xl">
-                Quiz Me
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>

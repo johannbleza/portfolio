@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div className="min-h-dvh bg-red-300 mt-[-100vh]">
-      <h1>Contact Section</h1>
+    <div className="min-h-dvh  mt-[-100vh] p-4">
+      <h1 className="text-6xl font-bold font-stone-900">Contact </h1>
     </div>
   );
 };

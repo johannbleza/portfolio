@@ -95,7 +95,7 @@ const Hero = () => {
           {
             filter: "brightness(50%)",
             scale: 5,
-            y: isDesktop ? "120dvh" : "100vh",
+            y: isDesktop ? "140dvh" : "100vh",
             scrollTrigger: {
               // pin: true,
               end: 400,
@@ -140,9 +140,8 @@ const Hero = () => {
             }
             className="sub cursor-pointer"
           >
-            Skills
+            About
           </p>
-          <p className="sub">About</p>
           <p className="sub">Contact</p>
         </div>
       </nav>
