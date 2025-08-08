@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollToPlugin, ScrollTrigger, SplitText } from "gsap/all";
 import { useRef } from "react";
+import { loaderDelay } from "@/lib/constants";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 
@@ -62,7 +63,7 @@ const Hero = () => {
     gsap.from(sub.lines, {
       y: 100,
       stagger: 0.05,
-      delay: 0.75,
+      delay: loaderDelay + 1,
     });
 
     gsap.to(".hero", {
@@ -76,7 +77,7 @@ const Hero = () => {
     gsap.from("#profile", {
       height: 0,
       duration: 1,
-      delay: 0.5,
+      delay: loaderDelay + 0.5,
     });
 
     const mm = gsap.matchMedia();
@@ -95,7 +96,7 @@ const Hero = () => {
           {
             filter: "brightness(50%)",
             scale: 5,
-            y: isDesktop ? "140dvh" : "100vh",
+            y: isDesktop ? "140dvh" : "115vh",
             scrollTrigger: {
               // pin: true,
               end: 400,
@@ -105,7 +106,7 @@ const Hero = () => {
         );
         gsap.from(split.chars, {
           y: isDesktop ? 200 : 100,
-          delay: 0.5,
+          delay: loaderDelay + 0.5,
           stagger: {
             amount: 0.5,
             from: "start",

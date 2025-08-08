@@ -5,6 +5,8 @@ interface Project {
   className: string;
 }
 
+export const loaderDelay = 2.5;
+
 export const projects: Project[] = [
   {
     name: "DailyGrid",

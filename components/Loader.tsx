@@ -1,10 +1,24 @@
 "use client";
+import { loaderDelay } from "@/lib/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useEffect, useState } from "react";
 
 const Loader = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [index, setIndex] = useState(0);
+  const words = [
+    "Hello",
+    "Bonjour",
+    "Ciao",
+    "Olà",
+    "Hej",
+    "やあ",
+    "Hallå",
+    "こんにちは",
+    "Hallo",
+    "Kamusta?",
+  ];
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1000);
@@ -12,6 +26,12 @@ const Loader = () => {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (index == words.length - 1) return;
+    setTimeout(() => setIndex((i) => i + 1), index == 0 ? 1000 : 150);
+  }, [index, words.length]);
+
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
@@ -26,7 +46,7 @@ const Loader = () => {
         const loaderText = gsap.timeline();
         loader
           .to(".shape", {
-            duration: 2 + 0.25,
+            duration: index == words.length - 1 ? 0 : loaderDelay + 0.25,
             attr: { d: "M0 502S175 272 500 272s500 230 500 230V0H0Z" },
             ease: "power3.in",
           })
@@ -37,11 +57,12 @@ const Loader = () => {
           });
         loaderText
           .to("#loader-text", {
-            delay: 0.5,
+            delay: 0.25,
             opacity: 1,
           })
           .to("#loader-text", {
-            delay: 0.5,
+            delay: 2.2,
+            ease: "power3.out",
             opacity: 0,
           });
       },
@@ -51,10 +72,11 @@ const Loader = () => {
   return (
     <div className="absolute -top-10 left-0 w-full h-full pointer-events-none z-50">
       <div
-        className="absolute text-6xl text-white w-full h-dvh flex justify-center items-center opacity-0"
+        className="absolute text-3xl md:text-5xl text-white w-full h-dvh flex justify-center items-center opacity-0 gap-4"
         id="loader-text"
       >
-        Nigga
+        <div className="rounded-full size-2 md:size-3 bg-white" />{" "}
+        {words[index]}
       </div>
       <svg
         viewBox="0 0 1000 1000"
