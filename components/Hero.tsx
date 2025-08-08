@@ -148,7 +148,7 @@ const Hero = () => {
 
               mm.add(
                 {
-                  isDesktop: "(min-width: 800px)",
+                  isDesktop: "(min-width: 500px)",
                   isMobile: "(max-width: 799px)",
                 },
 
@@ -157,7 +157,10 @@ const Hero = () => {
                   gsap.to(window, {
                     duration: 0.5,
                     scrollTo: {
-                      y: isDesktop ? "#nextjs" : "#html",
+                      y: "#projects",
+                      offsetY: isDesktop
+                        ? window.innerHeight * 0.25
+                        : window.innerHeight * 0.45,
                     },
                   });
                 },
@@ -193,7 +196,7 @@ const Hero = () => {
             id="profile"
           >
             <Image
-              priority
+              priority={true}
               src="/profile3.gif"
               fill={true}
               alt="profile"

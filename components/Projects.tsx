@@ -20,17 +20,19 @@ const Projects = () => {
     mm.add(
       {
         isDesktop: "(min-width: 600px)",
+        isLargeDesktop: "(min-width: 1600px)",
         isMobile: "(max-width: 799px)",
       },
       (context) => {
         const isDesktop = context.conditions?.isDesktop;
+        const isLargeDesktop = context.conditions?.isLargeDesktop;
         gsap.to("#projects", {
           y: "-100dvh",
           ease: "power1.inOut",
           scrollTrigger: {
             scrub: 2,
-            start: isDesktop ? 2200 : 1000,
-            snap: isDesktop ? 0.1 : 0.5,
+            start: isLargeDesktop ? 2200 : isDesktop ? 1800 : 1000,
+            // snap: isDesktop ? 0.1 : 0.5,
           },
         });
 
@@ -56,7 +58,7 @@ const Projects = () => {
                   stagger: 0.5,
                   scrollTrigger: {
                     trigger: "#projects-container",
-                    toggleActions: "restart pause pause reset",
+                    toggleActions: "restart play play reset",
                   },
                 }
               : {
@@ -105,6 +107,7 @@ const Projects = () => {
                 name={project.name}
                 img={project.img}
                 className={project.className}
+                desc={project.desc}
               />
             ))}
           </div>

@@ -23,9 +23,10 @@ const Loader = () => {
       (context) => {
         const isDesktop = context.conditions?.isDesktop;
         const loader = gsap.timeline();
+        const loaderText = gsap.timeline();
         loader
           .to(".shape", {
-            duration: 0.25,
+            duration: 2 + 0.25,
             attr: { d: "M0 502S175 272 500 272s500 230 500 230V0H0Z" },
             ease: "power3.in",
           })
@@ -34,22 +35,39 @@ const Loader = () => {
             ease: "power2",
             attr: { d: "M0 2S175 1 500 1s500 1 500 1V0H0Z" },
           });
+        loaderText
+          .to("#loader-text", {
+            delay: 0.5,
+            opacity: 1,
+          })
+          .to("#loader-text", {
+            delay: 0.5,
+            opacity: 0,
+          });
       },
     );
   }, []);
 
   return (
-    <svg
-      viewBox="0 0 1000 1000"
-      preserveAspectRatio={isMobile ? "xMaxYMin slice" : "none"}
-      className="absolute -top-10 left-0 w-full h-full z-40 pointer-events-none"
-    >
-      <path
-        className="shape"
-        d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
-        fill="black"
-      />
-    </svg>
+    <div className="absolute -top-10 left-0 w-full h-full pointer-events-none z-50">
+      <div
+        className="absolute text-6xl text-white w-full h-dvh flex justify-center items-center opacity-0"
+        id="loader-text"
+      >
+        Nigga
+      </div>
+      <svg
+        viewBox="0 0 1000 1000"
+        preserveAspectRatio={isMobile ? "xMaxYMin slice" : "none"}
+        className="w-full h-full"
+      >
+        <path
+          className="shape"
+          d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
+          fill="black"
+        />
+      </svg>
+    </div>
   );
 };
 

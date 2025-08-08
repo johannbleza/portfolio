@@ -70,10 +70,11 @@ const Skills = () => {
           About Me
         </h1>
         <p className="text-justify text-stone-200 md:text-xl skills">
-          I am Johann Sealtiel Bleza, a web developer based in the Philippines.
-          I started out coding through a coding bootcamp and work my way from
-          there. I discovered my passion through coding as I love to build
-          beautiful and interactive apps.
+          Hi there! I&apos;m Johann Sealtiel Bleza, a web developer from the
+          Philippines with a deep-rooted passion for all things in tech. My
+          journey began at a coding bootcamp, where I discovered my love for
+          building things on the web and mobile. Now, I&apos;m dedicated to
+          turning that passion int practical, creative solutions.
         </p>
       </section>
       <section className="flex flex-col gap-12  xl:w-[80%] mx-auto justify-between">
@@ -82,15 +83,17 @@ const Skills = () => {
             Skills
           </h1>
           <p className="text-justify text-stone-200 md:text-xl skills">
-            I am a full stack developer that specialized in the front-end and
-            leverages BaaS to rapidly build scalable and extensive apps.
+            I&apos;m a full-stack developer specializing in front-end
+            development, with a knack for building scalable and robust
+            applications by leveraging powerful cloud-based backend services.
           </p>
         </div>
         <div className="text-[12vw] font-bold text-white leading-[10vw] text-end tracking-tight lg:text-[7vw] lg:leading-[6vw] skills">
           <h1 className="lg:hidden">WEB DEV</h1>
           <h1 className="hidden lg:block">WEB DEVEVELOPMENT</h1>
+          <h1 className="lg:hidden">MOBILE APP</h1>
+          <h1 className="hidden lg:block">MOBILE APP DEV</h1>
           <h1>FRONT-END</h1>
-          <h1>UI/UX DESIGN</h1>
         </div>
       </section>
       <section
@@ -102,7 +105,7 @@ const Skills = () => {
             Tech Stack
           </h1>
           <p className="text-justify text-stone-200 md:text-xl tech tech">
-            My go to tech stack for web and mobile devlopment.
+            My go to tech stack for web and mobile devlopment in 2025.
           </p>
         </div>
         <div className="flex text-[7.4vw] tracking-tight font-bold leading-[7vw] justify-between lg:text-[6vw] lg:leading-[5vw]">
