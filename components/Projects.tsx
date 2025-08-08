@@ -57,8 +57,8 @@ const Projects = () => {
                   duration: 1,
                   stagger: 0.5,
                   scrollTrigger: {
-                    trigger: "#projects-container",
-                    toggleActions: "restart play play reset",
+                    trigger: "#projects",
+                    toggleActions: "restart none none reset",
                   },
                 }
               : {
@@ -69,8 +69,8 @@ const Projects = () => {
                   duration: 1,
                   stagger: 0.5,
                   scrollTrigger: {
-                    trigger: "#projects-container",
-                    toggleActions: "restart pause pause reset",
+                    trigger: "#projects",
+                    toggleActions: "restart none none reset",
                   },
                 },
           );

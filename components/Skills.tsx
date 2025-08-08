@@ -108,16 +108,15 @@ const Skills = () => {
             My go to tech stack for web and mobile devlopment in 2025.
           </p>
         </div>
-        <div className="flex text-[7.4vw] tracking-tight font-bold leading-[7vw] justify-between lg:text-[6vw] lg:leading-[5vw]">
+        <div className="flex text-[7vw] tracking-tight font-bold leading-[7vw] justify-between lg:text-[6vw] lg:leading-[5vw]">
           <div className="text-stone-200 lg:text-start tech">
-            <h1 id="html">HTML</h1>
             <h1>CSS</h1>
             <h1>TAILWIND</h1>
             <h1>JAVASCRIPT</h1>
             <h1>TYPESCRIPT</h1>
             <h1>REACT</h1>
             <h1>NODE.JS</h1>
-            <h1 id="nextjs">NEXT.JS</h1>
+            <h1>NEXT.JS</h1>
             <h1>ANGULAR</h1>
             <h1>REACT NATIVE</h1>
           </div>
@@ -131,7 +130,7 @@ const Skills = () => {
             <h1>SPRING BOOT</h1>
             <h1>DOCKER</h1>
             <h1>GIT</h1>
-            <h1>SQL</h1>{" "}
+            <h1>SQL</h1>
           </div>
         </div>
       </section>

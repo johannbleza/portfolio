@@ -15,7 +15,7 @@ const ProjectCard = ({ name, img, className }: ProjectCardProps) => {
         src={img}
         alt={img}
         fill={true}
-        className="object-cover object-ce"
+        className="object-cover object-ce project"
         sizes="(max-width: 1024px) 100vw, 50vw"
       />
       <div className="absolute inset-1">

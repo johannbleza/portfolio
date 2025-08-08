@@ -72,11 +72,10 @@ const Loader = () => {
   return (
     <div className="absolute -top-10 left-0 w-full h-full pointer-events-none z-50">
       <div
-        className="absolute text-3xl md:text-5xl text-white w-full h-dvh flex justify-center items-center opacity-0 gap-4"
+        className="absolute text-3xl  text-white w-full h-dvh flex justify-center items-center opacity-0 gap-4"
         id="loader-text"
       >
-        <div className="rounded-full size-2 md:size-3 bg-white" />{" "}
-        {words[index]}
+        <div className="rounded-full size-2 bg-white" /> {words[index]}
       </div>
       <svg
         viewBox="0 0 1000 1000"
