@@ -41,7 +41,7 @@ const Contact = () => {
   }, []);
   return (
     <div
-      className="bg-black min-h-dvh  mt-[-100vh] overflow-hidden"
+      className="bg-black min-h-dvh  mt-[-100dvh] overflow-hidden"
       id="contact"
     >
       <div className="md:w-[80%] mx-auto flex flex-col justify-between h-dvh  p-4 md:p-0">
