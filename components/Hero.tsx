@@ -28,7 +28,6 @@ const Hero = () => {
   };
 
   useGSAP(() => {
-    gsap.to(window, { scrollTo: 0, duration: 0.1 });
     if (secondText.current) {
       gsap.set(secondText.current, {
         left: secondText.current.getBoundingClientRect().width,
@@ -52,34 +51,6 @@ const Hero = () => {
     });
     const sub = SplitText.create(".sub", { type: "lines", mask: "lines" });
 
-    gsap.to(split.lines, {
-      y: 200,
-      scrollTrigger: {
-        scrub: 1,
-        end: 400,
-      },
-    });
-
-    gsap.from(sub.lines, {
-      y: 100,
-      stagger: 0.05,
-      delay: loaderDelay + 1,
-    });
-
-    gsap.to(".hero", {
-      opacity: 0,
-      scrollTrigger: {
-        scrub: 1,
-        end: 200,
-      },
-    });
-
-    gsap.from("#profile", {
-      height: 0,
-      duration: 1,
-      delay: loaderDelay + 0.5,
-    });
-
     const mm = gsap.matchMedia();
 
     mm.add(
@@ -89,6 +60,35 @@ const Hero = () => {
       },
       (context) => {
         const isDesktop = context.conditions?.isDesktop;
+
+        gsap.to(window, { scrollTo: 0, duration: 0.1 });
+        gsap.to(split.lines, {
+          y: 200,
+          scrollTrigger: {
+            scrub: 1,
+            end: 400,
+          },
+        });
+
+        gsap.from(sub.lines, {
+          y: 100,
+          stagger: 0.05,
+          delay: loaderDelay + 1,
+        });
+
+        gsap.to(".hero", {
+          opacity: 0,
+          scrollTrigger: {
+            scrub: 1,
+            end: 200,
+          },
+        });
+
+        gsap.from("#profile", {
+          height: 0,
+          duration: 1,
+          delay: loaderDelay + 0.5,
+        });
 
         gsap.fromTo(
           "#profile",
@@ -171,7 +171,17 @@ const Hero = () => {
           >
             Projects
           </p>
-          <p className="sub">Contact</p>
+          <button
+            className="sub"
+            onClick={() =>
+              gsap.to(window, {
+                duration: 0.5,
+                scrollTo: "#contact",
+              })
+            }
+          >
+            Contact
+          </button>
         </div>
       </nav>
       <div className="lg:absolute top-[16vh] lg:text-center">
@@ -208,9 +218,9 @@ const Hero = () => {
             className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl hero sub"
             id="info"
           >
-            <p>Front-End Developer</p>
-            <p>Web Development</p>
-            <p>UI/UX Design</p>
+            <p>Full Stack Developer</p>
+            <p>Web Developer</p>
+            <p>UI/UX Engineer</p>
           </div>
         </div>
       </div>

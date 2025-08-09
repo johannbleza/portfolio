@@ -67,7 +67,7 @@ const Projects = () => {
                   opacity: 0,
                   delay: 0.5,
                   duration: 1,
-                  stagger: 0.5,
+                  stagger: 0.25,
                   scrollTrigger: {
                     trigger: "#projects",
                     toggleActions: "restart none none reset",
@@ -81,7 +81,7 @@ const Projects = () => {
   return (
     <div>
       <div
-        className="bg-black text-stone-200 pt-20 pb-60 p-4 flex flex-col gap-6 z-50"
+        className="bg-black text-stone-200 pt-20 pb-60 p-4 flex flex-col gap-6"
         id="projects"
       >
         <div className="lg:w-[80%] lg:mx-auto flex flex-col gap-8">
