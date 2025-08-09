@@ -88,9 +88,9 @@ const Skills = () => {
             applications by leveraging powerful cloud-based backend services.
           </p>
         </div>
-        <div className="text-[12vw] font-bold text-white leading-[10vw] text-end tracking-tight lg:text-[7vw] lg:leading-[6vw] skills">
+        <div className="text-[13vw] font-bold text-white leading-[10vw] text-end tracking-tight lg:text-[7vw] lg:leading-[6vw] skills">
           <h1 className="lg:hidden">WEB DEV</h1>
-          <h1 className="hidden lg:block">WEB DEVEVELOPMENT</h1>
+          <h1 className="hidden lg:block">WEB DEVELOPMENT</h1>
           <h1 className="lg:hidden">MOBILE APP</h1>
           <h1 className="hidden lg:block">MOBILE APP DEV</h1>
           <h1>FRONT-END</h1>
@@ -110,6 +110,7 @@ const Skills = () => {
         </div>
         <div className="flex text-[7vw] tracking-tight font-bold leading-[7vw] justify-between lg:text-[6vw] lg:leading-[5vw]">
           <div className="text-stone-200 lg:text-start tech">
+            <h1>HTML</h1>
             <h1>CSS</h1>
             <h1>TAILWIND</h1>
             <h1>JAVASCRIPT</h1>

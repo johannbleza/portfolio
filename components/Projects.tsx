@@ -32,7 +32,6 @@ const Projects = () => {
           scrollTrigger: {
             scrub: 2,
             start: isLargeDesktop ? 2200 : isDesktop ? 1800 : 1000,
-            // snap: isDesktop ? 0.1 : 0.5,
           },
         });
 
@@ -46,6 +45,7 @@ const Projects = () => {
           },
         });
         if (gridRef.current) {
+          // This is your existing reveal animation
           gsap.from(
             (gridRef.current as HTMLElement).children,
             isDesktop
@@ -81,7 +81,7 @@ const Projects = () => {
   return (
     <div>
       <div
-        className="bg-black text-stone-200 pt-20 pb-60 p-4 flex flex-col gap-6"
+        className="bg-black text-stone-200 pt-20 pb-60 p-4 flex flex-col gap-6 z-50"
         id="projects"
       >
         <div className="lg:w-[80%] lg:mx-auto flex flex-col gap-8">

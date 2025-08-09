@@ -132,7 +132,7 @@ const Hero = () => {
         </div>
         <div className="md:flex justify-between gap-20">
           <p className="sub">Home</p>
-          <p
+          <button
             onClick={() =>
               gsap.to(window, {
                 duration: 0.5,
@@ -141,8 +141,8 @@ const Hero = () => {
             }
             className="sub cursor-pointer"
           >
-            About
-          </p>
+            <p className="">About</p>
+          </button>
           <p
             onClick={() => {
               const mm = gsap.matchMedia();
@@ -208,9 +208,9 @@ const Hero = () => {
             className="text-sm sm:text-md lg:absolute right-50 top-20  md:text-xl hero sub"
             id="info"
           >
-            <p>UI/UX Design</p>
             <p>Front-End Developer</p>
             <p>Web Development</p>
+            <p>UI/UX Design</p>
           </div>
         </div>
       </div>

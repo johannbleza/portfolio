@@ -58,6 +58,7 @@ const Loader = () => {
         loaderText
           .to("#loader-text", {
             delay: 0.25,
+            onStart: () => setIndex(0),
             opacity: 1,
           })
           .to("#loader-text", {
