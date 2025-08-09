@@ -70,6 +70,21 @@ const Hero = () => {
           },
         });
 
+        // gsap.to("#hero", {
+        //   backgroundColor: "#0c0a09",
+        //   scrollTrigger: {
+        //     scrub: 2,
+        //     end: 400,
+        //   },
+        // });
+        // gsap.to("#skills", {
+        //   backgroundColor: "#0c0a09",
+        //   scrollTrigger: {
+        //     scrub: 2,
+        //     end: 400,
+        //   },
+        // });
+
         gsap.from(sub.lines, {
           y: 100,
           stagger: 0.05,
@@ -118,7 +133,10 @@ const Hero = () => {
     );
   }, []);
   return (
-    <main className="relative min-h-dvh flex flex-col justify-between p-4">
+    <main
+      className="relative min-h-dvh flex flex-col justify-between p-4"
+      id="hero"
+    >
       <nav className=" flex justify-between items-start text-xl hero" id="nav">
         <div className="flex gap-2 items-center font-bold tracking-tighter">
           bleza.dev
@@ -219,8 +237,7 @@ const Hero = () => {
             id="info"
           >
             <p>Full Stack Developer</p>
-            <p>Web Developer</p>
-            <p>UI/UX Engineer</p>
+            <p>Web Designer</p>
           </div>
         </div>
       </div>

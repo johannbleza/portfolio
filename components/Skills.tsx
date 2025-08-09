@@ -62,7 +62,7 @@ const Skills = () => {
   }, []);
   return (
     <main
-      className="min-h-dvh p-4  flex flex-col gap-20 mt-16 mb-40 text-white"
+      className="min-h-dvh p-4  flex flex-col gap-20 pt-16 mb-40 text-white"
       id="skills"
     >
       <section className="flex flex-col justify-center items-center xl:w-[80%] mx-auto">

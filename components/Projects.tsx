@@ -55,7 +55,7 @@ const Projects = () => {
                   opacity: 0,
                   delay: 0.5,
                   duration: 1,
-                  stagger: 0.5,
+                  stagger: 0.2,
                   scrollTrigger: {
                     trigger: "#projects",
                     toggleActions: "restart none none reset",
@@ -67,7 +67,7 @@ const Projects = () => {
                   opacity: 0,
                   delay: 0.5,
                   duration: 1,
-                  stagger: 0.25,
+                  stagger: 0.2,
                   scrollTrigger: {
                     trigger: "#projects",
                     toggleActions: "restart none none reset",
@@ -97,7 +97,7 @@ const Projects = () => {
             </p>
           </div>
           <div
-            className="grid grid-cols-4 grid-rows-12 gap-4 h-dvh lg:h-[150dvh]"
+            className="grid grid-cols-4 grid-rows-12 gap-2 md:gap-4 h-dvh lg:h-[150dvh]"
             ref={gridRef}
             id="projects-container"
           >

@@ -9,7 +9,10 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ name, img, className }: ProjectCardProps) => {
   return (
-    <div className={className} style={{ position: "relative" }}>
+    <div
+      className={className + " overflow-hidden"}
+      style={{ position: "relative" }}
+    >
       <Image
         priority={true}
         src={img}
