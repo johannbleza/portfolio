@@ -194,7 +194,7 @@ const Hero = () => {
             onClick={() =>
               gsap.to(window, {
                 duration: 0.5,
-                scrollTo: "#contact",
+                scrollTo: "max",
               })
             }
           >
