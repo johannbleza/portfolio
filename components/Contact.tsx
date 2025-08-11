@@ -51,15 +51,23 @@ const Contact = () => {
           </h1>
           <div className="border-b-1 flex justify-between py-2">
             <p className="contact-text">Github</p>
-            <p className="contact-text">
+            <a
+              href="https://github.com/johannbleza"
+              target="_blank"
+              className="contact-text"
+            >
               <SquareArrowOutUpRight className="size-4 md:size-6" />
-            </p>
+            </a>
           </div>
           <div className="border-b-1 flex justify-between py-2">
             <p className="contact-text">LinkedIn</p>
-            <p className="contact-text">
+            <a
+              href="https://www.linkedin.com/in/johannbleza"
+              target="_blank"
+              className="contact-text"
+            >
               <SquareArrowOutUpRight className="size-4 md:size-6" />
-            </p>
+            </a>
           </div>
           <div className="border-b-1 flex justify-between py-2">
             <p className=" contact-text">Email</p>
@@ -84,7 +92,7 @@ const Contact = () => {
             id="scrollUp"
             onClick={() => gsap.to(window, { scrollTo: 0, duration: 1 })}
           >
-            <ArrowUp className="size-8" />
+            <ArrowUp className="size-8 cursor-pointer" />
           </div>
         </div>
       </div>

@@ -149,7 +149,9 @@ const Hero = () => {
           />
         </div>
         <div className="md:flex justify-between gap-20">
-          <p className="sub">Home</p>
+          <a href="#" className="sub">
+            Home
+          </a>
           <button
             onClick={() =>
               gsap.to(window, {

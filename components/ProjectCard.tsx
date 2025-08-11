@@ -1,3 +1,4 @@
+import { CodeIcon, Github, SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
 
 interface ProjectCardProps {
@@ -5,11 +6,14 @@ interface ProjectCardProps {
   desc: string;
   img: string;
   className: string;
+  link: string;
 }
 
-const ProjectCard = ({ name, img, className }: ProjectCardProps) => {
+const ProjectCard = ({ name, img, className, link }: ProjectCardProps) => {
   return (
-    <div
+    <a
+      href={link}
+      target="_blank"
       className={className + " overflow-hidden"}
       style={{ position: "relative" }}
     >
@@ -24,7 +28,7 @@ const ProjectCard = ({ name, img, className }: ProjectCardProps) => {
       <div className="absolute inset-1">
         <h2 className="font-bold md:text-xl">{name}</h2>
       </div>
-    </div>
+    </a>
   );
 };
 

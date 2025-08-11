@@ -96,6 +96,11 @@ const Projects = () => {
               (7)
             </p>
           </div>
+          <p className="text-lg projects-text -mt-4">
+            <span className="md:hidden">Tap&nbsp;</span>
+            <span className="max-md:hidden">Click&nbsp;</span>
+            to view a project.
+          </p>
           <div
             className="grid grid-cols-4 grid-rows-12 gap-2 md:gap-4 h-dvh lg:h-[150dvh]"
             ref={gridRef}
@@ -108,6 +113,7 @@ const Projects = () => {
                 img={project.img}
                 className={project.className}
                 desc={project.desc}
+                link={project.link}
               />
             ))}
           </div>

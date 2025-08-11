@@ -74,7 +74,7 @@ const Skills = () => {
           Philippines with a deep-rooted passion for all things in tech. My
           journey began at a coding bootcamp, where I discovered my love for
           building things on the web and mobile. Now, I&apos;m dedicated to
-          turning that passion int practical, creative solutions.
+          turning that passion into practical, creative solutions.
         </p>
       </section>
       <section className="flex flex-col gap-12  xl:w-[80%] mx-auto justify-between">
