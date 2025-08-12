@@ -65,9 +65,9 @@ const Skills = () => {
       className="min-h-dvh p-4  flex flex-col gap-20 pt-16 mb-40 text-white"
       id="skills"
     >
-      <section className="flex flex-col justify-center items-center xl:w-[80%] mx-auto">
+      <section className="flex flex-col justify-center items-center xl:max-w-[80%] mx-auto">
         <h1 className="text-5xl sm:text-6xl lg:text-[6vw] font-semibold  tracking-tight skills text-center">
-          About Me
+          About me
         </h1>
         <p className="text-justify text-stone-200 md:text-xl skills">
           Hi there! I&apos;m Johann Sealtiel Bleza, a web developer from the
@@ -77,7 +77,7 @@ const Skills = () => {
           turning that passion into practical, creative solutions.
         </p>
       </section>
-      <section className="flex flex-col gap-12  xl:w-[80%] mx-auto justify-between">
+      <section className="flex flex-col gap-12  xl:max-w-[80%] mx-auto justify-between">
         <div className="">
           <h1 className="text-5xl sm:text-6xl lg:text-[5vw] font-semibold  tracking-tight skills">
             Services
@@ -105,7 +105,7 @@ const Skills = () => {
             Tech Stack
           </h1>
           <p className="text-justify text-stone-200 md:text-xl tech tech">
-            My go to tech stack for web and mobile devlopment in 2025.
+            My go to tech stack for web and mobile development in 2025.
           </p>
         </div>
         <div className="flex text-[7vw] tracking-tight font-bold leading-[7vw] justify-between lg:text-[6vw] lg:leading-[5vw]">
