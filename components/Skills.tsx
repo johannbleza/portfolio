@@ -80,7 +80,7 @@ const Skills = () => {
       <section className="flex flex-col gap-12  xl:w-[80%] mx-auto justify-between">
         <div className="">
           <h1 className="text-5xl sm:text-6xl lg:text-[5vw] font-semibold  tracking-tight skills">
-            Skills
+            Services
           </h1>
           <p className="text-justify text-stone-200 md:text-xl skills">
             I&apos;m a full-stack developer specializing in front-end
@@ -118,8 +118,6 @@ const Skills = () => {
             <h1>REACT</h1>
             <h1>NODE.JS</h1>
             <h1>NEXT.JS</h1>
-            <h1>ANGULAR</h1>
-            <h1>REACT NATIVE</h1>
           </div>
           <div className="text-stone-300  text-end tech2">
             <h1>FLUTTER</h1>
@@ -127,9 +125,7 @@ const Skills = () => {
             <h1>FIREBASE</h1>
             <h1>PYTHON</h1>
             <h1>STREAMLIT</h1>
-            <h1>JAVA</h1>
-            <h1>SPRING BOOT</h1>
-            <h1>DOCKER</h1>
+            <h1>FIGMA</h1>
             <h1>GIT</h1>
             <h1>SQL</h1>
           </div>
