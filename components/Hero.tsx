@@ -230,6 +230,7 @@ const Hero = () => {
               src="/profile3.gif"
               fill={true}
               alt="profile"
+              unoptimized
               className="object-cover"
             />
           </div>
