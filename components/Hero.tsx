@@ -23,7 +23,6 @@ const Hero = () => {
     gsap.set(firstText.current, { xPercent: xPercent });
     gsap.set(secondText.current, { xPercent: xPercent });
     requestAnimationFrame(animate);
-
     xPercent += 0.1 * direction;
   };
 
@@ -95,7 +94,7 @@ const Hero = () => {
           opacity: 0,
           scrollTrigger: {
             scrub: 1,
-            end: 200,
+            end: 400,
           },
         });
 
@@ -117,7 +116,7 @@ const Hero = () => {
               end: 400,
               scrub: 2,
             },
-          },
+          }
         );
         gsap.from(split.chars, {
           y: isDesktop ? 200 : 100,
@@ -129,7 +128,7 @@ const Hero = () => {
 
           ease: "power2",
         });
-      },
+      }
     );
   }, []);
   return (
@@ -184,7 +183,7 @@ const Hero = () => {
                         : window.innerHeight * 0.45,
                     },
                   });
-                },
+                }
               );
             }}
             className="sub cursor-pointer"
